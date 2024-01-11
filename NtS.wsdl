@@ -1,70 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<!-- V.1.1 July 2014: 
-	Change:
-		WSDL namespace changed to http://www.ris.eu/nts.ms/1.1.3.8
-	Change:
-		NtS XSD namespace changed to http://www.ris.eu/nts/3.0.3.8
-		NtS XSD schema location changed to http://www.ris.eu/nts/3.0/NtS_XSD_V3-0-3-8.xsd
-	Change <xs:complexType name="id_pair">:
-		Elements type for sequence changed from nts-ms:string_20 to nts-ms:isrs_code_type 
-	Change <xs:simpleType name="string_20">:
-		replaced with nts-ms:isrs_code_type:
-			<xs:simpleType name="isrs_code_type">
-				<xs:restriction base="xs:string">
-					<xs:length value="20"/>
-					<xs:pattern value="[A-Z]{2}[A-Z]{3}[A-Z0-9]{5}[A-Z0-9]{5}[0-9]{5}" />
-				</xs:restriction>
-			</xs:simpleType>
-	Update <xs:simpleType name="error_code_type">:
-		add value "e310" for error if server is unable to handle nummer of results
-	Documentation <xs:simpleType name="error_code_type">:
-		Annotations for error codes added
-
-	V.2.0 November 2014:
-	Change:
-		WSDL namespace changed to http://www.ris.eu/nts.ms/2.0.4.0
-	Change:
-		NtS XSD namespace changed to http://www.ris.eu/nts/4.0.4.0
-		NtS XSD schema location changed to http://www.ris.eu/nts/4.0/NtS_XSD_V.4.0.4.0.xsd
-	Change <xs:complexType name="id_pair">:
-		Elements type for sequence changed from nts-ms:isrs_code_type to nts:isrs_code_type (defined within NtS_XSD_V.4.0.4.0.xsd)
-	Removed nts-ms:isrs_code_type
-  
-  V.2.1.4.7 - june 2021:
-  Changes:
-    WSDL namespace changed to https://ris.cesni.eu/_assets/NtS_MS/2.1.4.7
-   
-    NtS XSD namespace changed to https://ris.cesni.eu/_assets/NtS_XSD/4.0.4.7
-		NtS XSD schema location changed to https://ris.cesni.eu/_assets/NtS_XSD/4.0.4.7/NtS_XSD_V.4.0.4.7.xsd
-    
-    Changed date_start and date_end from date to dateTime. This complextype is used for dates_issue  
-      <xs:complexType name="date_pair">
-        <xs:sequence>
-          <xs:element name="date_start" type="xs:dateTime"/>
-          <xs:element name="date_end" type="xs:dateTime" minOccurs="0"/>
-        </xs:sequence>
-      </xs:complexType>
-    
-    Changed result_error, to contain an error code AND error description
-      <xs:complexType name="error_type">
-	      <xs:sequence>
-		      <xs:element name="error_code" type="nts-ms:error_code_type"/>
-		      <xs:element name="error_description" type="xs:string"/>
-	      </xs:sequence>
-      </xs:complexType>
-
-    Add new request parameter
-      <xs:element name="country_code" type="nts:country_code_enum" minOccurs="0" maxOccurs="1"/>
-    
-    Removed:
-      <xs:element name="ids" type="nts-ms:id_pair" minOccurs="0" maxOccurs="unbounded"/>
-
--->
-<!-- V.5.0 july 2021  
-    Approval of alle change requests during RIS Week - Temporary Working Group NtS
-    XSD ready for ES-RIS 2023/1 
--->
-<wsdl:definitions xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:http="http://schemas.xmlsoap.org/wsdl/http/" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/" xmlns:mime="http://schemas.xmlsoap.org/wsdl/mime/" xmlns:nts="https://ris.cesni.eu/_assets/NtS_XSD/5.0.5.0" xmlns:tns="https://ris.cesni.eu/_assets/NtS_MS/3.0.5.0" targetNamespace="https://ris.cesni.eu/_assets/NtS_MS/3.0.5.0" name="NtS-Message-Service">
+<wsdl:definitions xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:http="http://schemas.xmlsoap.org/wsdl/http/" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/" xmlns:mime="http://schemas.xmlsoap.org/wsdl/mime/" xmlns:nts="https://ris.cesni.eu/_assets/NtS_XSD/6.0.6.0" xmlns:tns="https://ris.cesni.eu/_assets/NtS_MS/6.0.6.0" targetNamespace="https://ris.cesni.eu/_assets/NtS_MS/6.0.6.0" name="NtS-Message-Service">
   <!--
     ==========================
     = specification of types =
@@ -76,14 +11,14 @@
       = xml-schema for types =
       ========================
     -->
-    <xs:schema targetNamespace="https://ris.cesni.eu/_assets/NtS_MS/3.0.5.0" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:nts="https://ris.cesni.eu/_assets/NtS_XSD/5.0.5.0" xmlns:nts-ms="https://ris.cesni.eu/_assets/NtS_MS/3.0.5.0" elementFormDefault="qualified" attributeFormDefault="unqualified" version="3.0.5.0">
+    <xs:schema targetNamespace="https://ris.cesni.eu/_assets/NtS_MS/6.0.6.0" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:nts="https://ris.cesni.eu/_assets/NtS_XSD/6.0.6.0" xmlns:nts-ms="https://ris.cesni.eu/_assets/NtS_MS/6.0.6.0" elementFormDefault="qualified" attributeFormDefault="unqualified" version="6.0.6.0">
       <!-- import NtS schema -->
-      <xs:import namespace="https://ris.cesni.eu/_assets/NtS_XSD/5.0.5.0" schemaLocation="https://ris.cesni.eu/_assets/NtS_XSD/5.0.5.0/NtS_XSD_V.5.0.5.0.xsd"/>
+      <xs:import namespace="https://ris.cesni.eu/_assets/NtS_XSD/6.0.6.0" schemaLocation="https://ris.cesni.eu/_assets/NtS_XSD/6.0.6.0/NtS_XSD_V.6.0.6.0.xsd"/>
       <!-- query with filters, parameters according to the NtS standard -->
       <xs:element name="get_messages_query">
         <xs:complexType>
           <xs:sequence>
-            <!-- type of message (FTM, WRM, ICEM, WERM) -->
+            <!-- type of message (FTM, WRM, WERM) -->
             <xs:element name="message_type" type="nts-ms:message_type_type"/>
             <!-- country code of publishing party -->
             <xs:element name="country_code" type="nts:country_code_enum" minOccurs="0" maxOccurs="1"/>
@@ -117,7 +52,6 @@
         <xs:restriction base="xs:string">
           <xs:enumeration value="FTM"/>
           <xs:enumeration value="WRM"/>
-          <xs:enumeration value="ICEM"/>
           <xs:enumeration value="WERM"/>
         </xs:restriction>
       </xs:simpleType>
