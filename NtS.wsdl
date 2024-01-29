@@ -10,7 +10,6 @@
 	xmlns:xs="http://www.w3.org/2001/XMLSchema"
 	targetNamespace="https://ris.cesni.eu/_assets/NtS_MS/6.0.6.0"
 	name="NtS-Message-Service">
-
 	<!--
 	==========================
 	= specification of types =
