@@ -60,10 +60,8 @@
 						<xs:element name="paging_result" type="nts-ms:paging_result_type" minOccurs="0"/>
 					</xs:sequence>
 				</xs:complexType>
-			</xs:element>
-		
-		<!-- type definitions used in request -->
-		
+			</xs:element>		
+		<!-- type definitions used in request -->		
 			<xs:simpleType name="message_type_type">
 				<xs:restriction base="xs:string">
 					<xs:enumeration value="FTM"/>
@@ -149,21 +147,18 @@
 			</xs:complexType>
 		</xs:schema>
 	</wsdl:types>
-
 	<wsdl:message name="get_messages_request">
 		<wsdl:part name="parameters" element="tns:get_messages_query"/>
 	</wsdl:message>
 	<wsdl:message name="get_messages_response">
 		<wsdl:part name="parameters" element="tns:get_messages_result"/>
 	</wsdl:message>
-
 	<wsdl:portType name="NtS_message_service">
 		<wsdl:operation name="get_messages">
 			<wsdl:input message="tns:get_messages_request"/>
 			<wsdl:output message="tns:get_messages_response"/>
 		</wsdl:operation>
 	</wsdl:portType>
-
 	<wsdl:binding name="NtS_message_service_soap_binding" type="tns:NtS_message_service">
 		<soap:binding style="document" transport="http://schemas.xmlsoap.org/soap/http"/>
 		<wsdl:operation name="get_messages">
@@ -176,7 +171,6 @@
 			</wsdl:output>
 		</wsdl:operation>
 	</wsdl:binding>
-
 	<wsdl:service name="NtS_message_service_service">
 		<wsdl:port name="NtS_message_service" binding="tns:NtS_message_service_soap_binding">
 			<soap:address location="http://nts-ms.example.org/NtS_message_service"/>
