@@ -8,7 +8,6 @@ An overview of all changes to the NtS wsdl is provided in this file.
 
 - removal of ICEM
 
-
 ## [3.0] - July 2021
 
 Approval of alle change requests during RIS Week, WSDL ready for ES-RIS 2023/1
