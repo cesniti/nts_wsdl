@@ -2,7 +2,7 @@
 
 An overview of all changes to the NtS wsdl is provided in this file.
 
-## [Unreleased] 
+## [6.0] - October 2024 
 
 ### Changed
 
