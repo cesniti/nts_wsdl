@@ -3,12 +3,12 @@
 	xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/"
 	xmlns:http="http://schemas.xmlsoap.org/wsdl/http/"
 	xmlns:mime="http://schemas.xmlsoap.org/wsdl/mime/"
-	xmlns:nts="https://ris.cesni.eu/_assets/NtS_XSD/6.0.6.0"
+	xmlns:nts="https://ris.cesni.eu/_assets/NtS_XSD/7.0.7.0"
 	xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/"
 	xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/"
-	xmlns:tns="https://ris.cesni.eu/_assets/NtS_MS/6.0.6.0"
+	xmlns:tns="https://ris.cesni.eu/_assets/NtS_MS/7.0.7.0"
 	xmlns:xs="http://www.w3.org/2001/XMLSchema"
-	targetNamespace="https://ris.cesni.eu/_assets/NtS_MS/6.0.6.0"
+	targetNamespace="https://ris.cesni.eu/_assets/NtS_MS/7.0.7.0"
 	name="NtS-Message-Service">
 	<!--
 	==========================
@@ -23,14 +23,14 @@
 		-->
 		<xs:schema
 			xmlns:xs="http://www.w3.org/2001/XMLSchema" 
-			xmlns:nts="https://ris.cesni.eu/_assets/NtS_XSD/6.0.6.0" 
-			xmlns:nts-ms="https://ris.cesni.eu/_assets/NtS_MS/6.0.6.0" 
-			targetNamespace="https://ris.cesni.eu/_assets/NtS_MS/6.0.6.0" 
+			xmlns:nts="https://ris.cesni.eu/_assets/NtS_XSD/7.0.7.0" 
+			xmlns:nts-ms="https://ris.cesni.eu/_assets/NtS_MS/7.0.7.0" 
+			targetNamespace="https://ris.cesni.eu/_assets/NtS_MS/7.0.7.0" 
 			elementFormDefault="qualified" 
 			attributeFormDefault="unqualified" 
-			version="6.0.6.0">
+			version="7.0.7.0">
 			<!-- import NtS schema -->
-			<xs:import namespace="https://ris.cesni.eu/_assets/NtS_XSD/6.0.6.0" schemaLocation="https://ris.cesni.eu/_assets/NtS_XSD/6.0.6.0/NtS_XSD_V.6.0.6.0.xsd"/>
+			<xs:import namespace="https://ris.cesni.eu/_assets/NtS_XSD/7.0.7.0" schemaLocation="https://ris.cesni.eu/_assets/NtS_XSD/7.0.7.0/NtS_XSD_V.7.0.7.0.xsd"/>
 			<!-- query with filters, parameters according to the NtS standard -->
 			<xs:element name="get_messages_query">
 				<xs:complexType>
